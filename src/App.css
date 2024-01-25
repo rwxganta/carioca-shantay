@@ -1,42 +1,114 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin-inline: auto;
+  height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+img {
+    display: block;
+    max-width: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#root > * {
+    flex-grow: 1;
 }
 
-.card {
-  padding: 2em;
+.login {
+    /*outline: 2px dotted lightseagreen;*/
+    max-width: 50rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
 }
 
-.read-the-docs {
-  color: #888;
+.img-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+}
+
+.login-content {
+    /*padding-inline: 100px;*/
+    padding-block: 2rem;
+    background-color: hsl(71, 100%, 93%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+}
+
+.login-content img {
+    max-width: 250px;
+    margin-bottom: 2rem;
+}
+
+form {
+    display: grid;
+    gap: .6rem;
+}
+
+input {
+    padding-block: .4rem;
+    padding-inline: .6rem;
+    border: 0;
+    border-bottom: 2px solid #4C9773;
+    transition: border-color 250ms;
+}
+
+input:focus {
+    outline: none;
+    border-color: #124C38;
+}
+
+
+form a {
+    font-size: .7rem;
+    text-align: right;
+    text-decoration: none;
+    color: #4C9773;
+}
+
+form > button {
+    padding-block: .6rem;
+    margin-top: 1.4rem;
+    width: 150px;
+    justify-self: center;
+    align-self: center;
+    color: white;
+    background-color: #124C38;
+    border-radius: 100vh;
+    border: 0;
+}
+
+
+.actions {
+    /*outline: 1px solid green;*/
+    width: 100px;
+    display: grid;
+    gap: .5rem;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.actions button {
+    padding-block: .7rem;
+    font-size: .9rem;
+    font-weight: 600;
+    border: 0;
+    border-radius: 2.5rem 0 0 2.5rem;
+}
+
+.actions button[data-active='true'] {
+    background-color: hsl(71, 100%, 93%);
 }
